@@ -1,0 +1,71 @@
+<div class="main">
+
+    <div class="left">
+
+        <a id="header">musicaly</a>
+
+        <a routerLink="/" id="home-nav">Home</a>
+
+        <a id="my-songs-nav">My songs</a>
+
+        <a id="log-out-nav">Log out</a>
+
+
+    </div>
+
+
+    <div class="right">
+
+        <input type="search" class="search-bar" placeholder="Search songs, artists...">
+
+        <h1 id="tracks-header">Tracks</h1>
+
+        <div class="tracks">
+
+            <div class="track-box" *ngFor="let song of songs">
+
+                <div class="track-card">
+
+           
+                        <img src="/assets/images/small-play.svg" alt="">
+          
+
+                    
+
+                    <div id="song-box">
+
+                        <p id="song-name">{{song.song}}</p>
+
+                    </div>
+
+                   <div id="artist-box">
+                    <p id="artist">{{song.artist}}</p>
+                   </div>
+
+               <div id="album-box">
+                <p id="album">{{song.album}}</p>
+               </div>
+
+               <div id="duration-box">
+
+                <p id="duration">{{song.duration}}</p>
+
+               </div>
+                    
+        
+
+                </div>
+              
+    
+    
+    
+            </div>
+        </div>
+        
+
+    </div>
+
+   
+    
+
+</div>

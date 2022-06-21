@@ -1,0 +1,170 @@
+.main{
+    display: flex;
+ 
+
+}
+
+.left { 
+    width: 18%;
+    height: 100vh;
+   
+    background-color: #141414;
+  
+    color: white;
+    padding-left: 15px;
+    border-right: 1px solid rgb(75, 75, 75);
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    
+}
+
+#header{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 14px;
+    margin-bottom: 30px;
+}
+
+#home-nav{
+    font-size: 20px;
+}
+
+#my-songs-nav{
+    font-size: 20px;
+}
+
+#log-out-nav{
+    font-size: 20px;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.right{
+    width: 82%;
+    height: 100vh;
+    float: right;
+    background-color: #090909;
+    color: white;
+    margin: 20px;
+    top: 1em;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+
+
+.search-bar {
+     height: 40px;
+     width: 300px;
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     border-bottom: 1px solid rgb(75, 75, 75);
+     background-color: #090909;
+     color: white;
+     margin-left: 10px;
+
+
+     &:focus{
+        outline: none;
+     }
+     
+}
+
+#tracks-header{ 
+    margin-left: 10px;
+}
+
+.tracks {
+    margin-left: 15px;
+    width: 82%;
+    height: 100%;
+    bottom: 1em;
+    
+
+
+
+}
+
+.track-card{
+    color: white;
+    background-color: #141414;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+
+}
+
+#image-box{
+    width:40px;
+    height: 100%;
+}
+
+#play-icon {
+    display: table-cell;
+    text-align: center;
+vertical-align: middle;
+}
+
+
+#duration {
+
+   margin-right: 20px;
+}
+
+#song-box {
+
+    width:600px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 20px;
+    
+
+}
+#artist-box {
+
+    width:300px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    
+
+}
+
+#album-box {
+
+    width:300px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    
+
+}
+#duration-box {
+
+    width:300px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    margin-right: 20px;
+    
+
+}
+
+
+
+
+
