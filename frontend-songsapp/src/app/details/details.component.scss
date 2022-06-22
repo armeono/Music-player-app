@@ -1,0 +1,27 @@
+
+body{
+
+    background-color: #141414;
+}
+.container{
+
+    height: 400px;
+    width: 600px;
+    background-color: #141414;
+    color: white;
+
+    
+
+}
+
+.details {
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+}
+
+::ng-deep .custom-dialog {
+    mat-dialog-container {
+      padding: 0;
+    }
+  }
