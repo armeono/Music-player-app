@@ -7,5 +7,6 @@ export interface ISongs {
     date_entered: string,
     date_modified: string,
     category: string, 
-    album_name: string
+    album_name: string,
+    duration: string
 }

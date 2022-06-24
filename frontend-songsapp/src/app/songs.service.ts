@@ -17,17 +17,26 @@ export class SongsService {
     date_entered: "entered",
     date_modified: "modified",
     category: "category",
-    album_name: "album"
+    album_name: "album",
+    duration: "00:00"
   })
 
   currentSongs = this.songsInfo.asObservable();
 
-  url: string = ''
+  url: string = 'http://localhost:8080/songs/getSongs'
 
 
   constructor(private http: HttpClient) { }
 
   getSongs(): Observable<ISongs[]>{
-    return this.http.get<ISongs[]>(this.url);
+
+    let songs: any = []
+
+    songs = this.http.get<ISongs[]>(this.url);
+
+    console.log("songs")
+
+    return songs;
+    
   }
 }

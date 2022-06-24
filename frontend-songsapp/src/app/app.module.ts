@@ -11,14 +11,18 @@ import { DetailsComponent } from './details/details.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { SongsService } from './songs.service';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { LogInComponent } from './log-in/log-in.component';
+import { MatButtonModule } from '@angular/material/button';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
-    FavoritesComponent,
+
+
 
   ],
   entryComponents: [DetailsComponent],
@@ -29,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http'
     Ng2SearchPipeModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
     
     
   ],
