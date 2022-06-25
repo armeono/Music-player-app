@@ -12,6 +12,8 @@ export class SignUpComponent implements OnInit {
 
   user: any;
 
+  errors: any = []
+
 
   constructor(private userService: UsersService, private router: Router) {
 
@@ -32,7 +34,26 @@ export class SignUpComponent implements OnInit {
       password: pass
     }
 
-    this.userService.addUser(newUser);
+    const userInput = <HTMLInputElement>document.getElementById('userInput')
+    const passInput = <HTMLInputElement>document.getElementById('passwordInput')
+
+    if(passInput.value == "" || userInput.value == ""){
+
+      passInput.style.border = "1px solid red"
+      userInput.style.border = "1px solid red"
+
+      this.errors = []
+
+      this.errors.push("Input fields cannot be empty! Please try again!")
+
+    }else { 
+
+      this.userService.addUser(newUser);
+      this.router.navigate(['/login'])
+      
+    }
+
+
 
 
 
