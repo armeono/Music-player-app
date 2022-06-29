@@ -27,5 +27,17 @@ public class FavoriteController {
 
     }
 
+    @PostMapping("/postSong/{user_id}/{song_id}")
+    public void addSong(@PathVariable Integer user_id, @PathVariable Integer song_id){
+        favService.addSong(user_id, song_id);
+    }
+
+    @DeleteMapping("/deleteSong/{user_id}/{song_id}")
+    public void deleteSongFromFavorites(@PathVariable Integer user_id, @PathVariable Integer song_id){
+
+        favService.removeSong(user_id, song_id);
+
+    }
+
 
 }

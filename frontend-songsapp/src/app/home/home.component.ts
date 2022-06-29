@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DetailsComponent } from '../details/details.component';
+import { FavoritesService } from '../favorites.service';
 import { ISongs } from '../songs';
 import { SongsService } from '../songs.service';
 import { UsersService } from '../users.service';
@@ -19,12 +20,21 @@ export class HomeComponent implements OnInit {
     username: 'username'
   }
 
+  currentState: any; 
+
 
   searchText: any;
 
   public songs: any = []
 
-  constructor(private dialogRef: MatDialog, private songService: SongsService, private userService: UsersService, private router: Router) {
+  constructor(private dialogRef: MatDialog, 
+    private songService: SongsService, 
+    private userService: UsersService, 
+    private router: Router,
+    private favService: FavoritesService
+    ) {
+
+      this.favService.changeToHome();
 
    
 
@@ -36,6 +46,12 @@ export class HomeComponent implements OnInit {
 
     this.userService.currentUser.subscribe(data => {
       this.currentUser = data;
+    })
+
+    this.favService.currentState.subscribe(data => {
+
+      this.currentState = data
+
     })
 
 

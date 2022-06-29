@@ -21,6 +21,8 @@ export class FavoritesComponent implements OnInit {
 
   searchText: any;
 
+  currentState: any;
+
 
 
   public songs: any[] = []
@@ -63,6 +65,12 @@ export class FavoritesComponent implements OnInit {
         
       })
     
+    })
+
+    this.favService.changeToFavorites();
+
+    this.favService.currentState.subscribe(data => {
+      this.currentState = data
     })
 
 
