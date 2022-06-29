@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { IUsers } from './users';
 
@@ -9,6 +10,7 @@ import { IUsers } from './users';
 export class UsersService {
 
   defaultUser: IUsers = {
+    id: 0,
     username: 'User',
     password: 'Password'
   }
@@ -18,13 +20,47 @@ export class UsersService {
   currentUser = this.user.asObservable();
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
 
-  url: string = 'http://localhost:8080/users/newUser'
+  addUserURL: string = 'http://localhost:8080/users/newUser'
+
+  logInUserURL: string = 'http://localhost:8080/users/logInUser'
+
+
+  userIDURL: string = 'http://localhost:8080/users/userID'
+
 
   addUser(user: IUsers){
-    this.http.post(this.url, user).subscribe();
+    this.http.post(this.addUserURL, user).subscribe();
+  }
+
+  checkUser(user: IUsers){
+
+    this.http.post(this.logInUserURL, user).subscribe(response => {
+      if(response == true){
+
+        this.user.next(user);
+
+        this.router.navigate(['/'])
+
+        localStorage.setItem('username', user.username)
+        
+        
+       
+
+        
+      }
+    });
+
+
+  }
+
+
+  getUserID(username: string){
+
+    return this.http.get<String>(`http://localhost:8080/users/userID/${username}`);
+
   }
 
 

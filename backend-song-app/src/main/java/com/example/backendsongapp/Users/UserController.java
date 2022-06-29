@@ -22,12 +22,12 @@ public class UserController {
     }
 
     @GetMapping("/getUsers")
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return userService.getUsers();
     }
 
     @PostMapping("/newUser")
-    public String addNewUser(@RequestBody User user){
+    public String addNewUser(@RequestBody User user) {
 
         String encodedPassword = encodePassword(user.getPassword());
         user.setPassword(encodedPassword);
@@ -35,6 +35,42 @@ public class UserController {
         userService.addUser(user);
 
         return "User added!";
+
+    }
+
+    @PostMapping("/logInUser")
+    public boolean logIn(@RequestBody User user) {
+
+        User[] users = userService.getOneUser(user.getUsername());
+
+        User currentUser;
+
+
+
+        if(users.length == 0){
+            return false;
+        }else {
+
+            currentUser = users[0];
+
+            if(encoder.matches(user.getPassword(), currentUser.getPassword())){
+                return true;
+            }else {
+                return false;
+            }
+
+        }
+
+
+
+    }
+
+    @GetMapping("userID/{username}")
+    public Integer getID(@PathVariable String username){
+
+        System.out.println(username);
+
+        return userService.getID(username);
 
     }
 

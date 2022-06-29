@@ -8,13 +8,15 @@
 
         <a routerLink="/favorites" routerLinkActive="active-link" id="favorites-nav">Favorites</a>
 
-        <a id="log-out-nav">Log out</a>
+        <a id="log-out-nav" (click)="logOut()">Log out</a>
 
 
     </div>
 
 
     <div class="right">
+
+        <h1 id="userHeader">Hello, {{currentUser.username}}</h1>
 
         <input type="search" class="search-bar" placeholder="Search songs, artists..." [(ngModel)]="searchText" ngModel [ngModelOptions]="{standalone: true}">
 
@@ -48,6 +50,7 @@
                         <p id="song-name">{{song.song_name}}</p>
 
                     </div>
+                    
 
                    <div id="artist-box">
                     <p id="artist">{{song.artist_name}}</p>

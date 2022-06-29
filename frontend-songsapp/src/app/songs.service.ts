@@ -26,6 +26,8 @@ export class SongsService {
   url: string = 'http://localhost:8080/songs/getSongs'
 
 
+
+
   constructor(private http: HttpClient) { }
 
   getSongs(): Observable<ISongs[]>{
@@ -34,9 +36,13 @@ export class SongsService {
 
     songs = this.http.get<ISongs[]>(this.url);
 
-    console.log("songs")
-
     return songs;
     
   }
+
+  getOneSong(id: any): Observable<ISongs> {
+    return this.http.get<ISongs>(`http://localhost:8080/songs/getOneSong/${id}`);
+  }
+
+
 }

@@ -24,4 +24,15 @@ public class UserService {
     public void addUser(User user){
         userRepository.save(user);
     }
+
+    public User[] getOneUser(String username){
+
+        return userRepository.getUserByUsername(username);
+    }
+
+    public Integer getID(String username){
+
+        return userRepository.getUserID(username);
+
+    }
 }

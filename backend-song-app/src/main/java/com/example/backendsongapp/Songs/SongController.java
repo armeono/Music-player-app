@@ -2,12 +2,10 @@ package com.example.backendsongapp.Songs;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/songs")
@@ -34,6 +32,11 @@ public class SongController {
         List<Song> songs = songService.getSongs();
 
         return songs;
+    }
+
+    @GetMapping("/getOneSong/{id}")
+    public Optional<Song> getSong(@PathVariable Integer id){
+        return songService.getOneSong(id);
     }
 
 

@@ -8,7 +8,7 @@
 
         <a routerLink="/favorites" routerLinkActive="active-link" id="favorites-nav">Favorites</a>
 
-        <a id="log-out-nav">Log out</a>
+        <a id="log-out-nav" (click)="logOut()">Log out</a>
 
 
     </div>
@@ -40,21 +40,23 @@
 
            
                         <img src="/assets/images/small-play.svg" alt="">
+
+                       
           
                         
 
                     <div id="song-box">
 
-                        <p id="song-name">{{song.song}}</p>
+                        <p id="song-name">{{song.song_name}}</p>
 
                     </div>
 
                    <div id="artist-box">
-                    <p id="artist">{{song.artist}}</p>
+                    <p id="artist">{{song.artist_name}}</p>
                    </div>
 
                <div id="album-box">
-                <p id="album">{{song.album}}</p>
+                <p id="album">{{song.album_name}}</p>
                </div>
 
                <div id="duration-box">
