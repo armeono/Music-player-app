@@ -15,12 +15,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddSongComponent } from './add-song/add-song.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
+    AddSongComponent,
 
 
 

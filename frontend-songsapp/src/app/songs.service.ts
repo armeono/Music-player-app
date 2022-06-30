@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ISongs } from './songs';
 
@@ -40,8 +40,24 @@ export class SongsService {
     
   }
 
+  postSongURL: string = 'http://localhost:8080/songs/addSong'
+
   getOneSong(id: any): Observable<ISongs> {
     return this.http.get<ISongs>(`http://localhost:8080/songs/getOneSong/${id}`);
+  }
+
+  DeleteSong(song: any){
+    this.http.delete(`http://localhost:8080/songs/deleteSong/${song.id}`).subscribe();
+  }
+
+  AddNewSong(song: any){
+
+    let headers = new HttpHeaders();
+    headers.append('Content-Type','application/json');
+
+    console.log(song)
+
+    this.http.post(this.postSongURL, song, {headers: headers}).subscribe();
   }
 
 

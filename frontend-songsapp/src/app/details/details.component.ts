@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FavoritesService } from '../favorites.service';
 import { FavoritesComponent } from '../favorites/favorites.component';
+import { SongsService } from '../songs.service';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class DetailsComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
    private favService: FavoritesService,
    private userService: UsersService,
-   private dialogRef: MatDialog)
+   private dialogRef: MatDialog,
+   private songService: SongsService)
   {
 
     this.favService.currentState.subscribe(data => {
@@ -71,6 +73,32 @@ export class DetailsComponent implements OnInit {
       this.dialogRef.closeAll()
 
       location.reload()
+
+      
+    })
+
+  }
+
+  deleteSong(song: any){
+
+    this.userService.getUserID(this.currentUser.username).subscribe(response => {
+      this.favService.removeFromFavorites(response, song.id);
+
+      console.log("song removed")
+
+
+
+    this.songService.DeleteSong(song);
+
+    this.dialogRef.closeAll()
+
+    location.reload()
+
+
+
+      
+
+
 
       
     })

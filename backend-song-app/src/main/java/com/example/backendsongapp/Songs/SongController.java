@@ -39,5 +39,19 @@ public class SongController {
         return songService.getOneSong(id);
     }
 
+    @DeleteMapping("/deleteSong/{song_id}")
+    public void DeleteSong(@PathVariable Integer song_id){
+        songService.DeleteSong(song_id);
+    }
+
+    @PostMapping("/addSong")
+    public void AddSong(@RequestBody Song song){
+
+
+        songService.AddSong(song);
+
+
+    }
+
 
 }

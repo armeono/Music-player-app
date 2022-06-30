@@ -2,6 +2,7 @@ import { ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AddSongComponent } from '../add-song/add-song.component';
 import { DetailsComponent } from '../details/details.component';
 import { FavoritesService } from '../favorites.service';
 import { ISongs } from '../songs';
@@ -78,6 +79,14 @@ export class HomeComponent implements OnInit {
 
     this.router.navigate(['/login'])
     localStorage.removeItem('username')
+  }
+
+  
+  openAddSong(){
+    
+    this.dialogRef.open(AddSongComponent, {
+      panelClass: 'custom-dialog'
+    })
   }
 
 

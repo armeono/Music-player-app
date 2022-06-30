@@ -1,0 +1,83 @@
+
+body{
+
+    background-color: #141414;
+}
+.container{
+
+    height: 600px;
+    width: 800px;
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 20px;
+    
+
+}
+
+::ng-deep .custom-dialog {
+    mat-dialog-container {
+      padding: 0;
+    }
+  }
+
+.container h1 {
+    margin: 0;
+}
+
+.container input {
+  
+    width: 80%;
+
+
+}
+
+.container button {
+    margin: 0 auto; 
+    width: 80%;
+
+    margin-top: 50px;
+
+    background-color: #ee665c;
+    color: white;
+}
+
+.short{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.short input {
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 30px;
+    text-indent: 10px;
+    background-color: #141414;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid rgb(98, 98, 98);
+
+    margin-bottom: 20px;
+
+    color: white;
+}

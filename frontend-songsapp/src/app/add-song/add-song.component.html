@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Add New Song</h1>
+
+    <div class="main">
+
+
+    <input type="text" id="song-name" placeholder="Song" #song_name>
+    <input type="text" id="artist_name" placeholder="Artist" #artist_name>
+    <input type="text" id="album-name" placeholder="Album" #album_name>
+    <input type="text" id="song-url" placeholder="URL" #url>
+
+    </div>
+
+    <div class="short">
+        <input type="text" id="rating" placeholder="Rating" #rating>
+        <input type="text" id="genre" placeholder="Genre" #genre>
+        <input type="text" id="duration" placeholder="Duration" #duration>
+    </div>
+   
+
+    <button mat-raised-button id="add-song" (click)="addNewSong(song_name.value, artist_name.value, album_name.value, url.value, rating.value, genre.value, duration.value)">Add song</button>
+
+</div>

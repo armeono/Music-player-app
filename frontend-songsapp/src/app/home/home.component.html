@@ -16,11 +16,22 @@
 
     <div class="right">
 
-        <h1 id="userHeader">Hello, {{currentUser.username}}</h1>
+        <div class="flex-container">
+
+            <h1 id="userHeader">Hello, {{currentUser.username}}</h1>
+
+            <button mat-raised-button id="add-song-button" (click)="openAddSong()">Add song</button>
+
+
+        </div>
+
+        
 
         <input type="search" class="search-bar" placeholder="Search songs, artists..." [(ngModel)]="searchText" ngModel [ngModelOptions]="{standalone: true}">
 
         <h1 id="tracks-header">Tracks</h1>
+
+       
 
         <div class="title-container">
             <h4 id="track-title">Song</h4>
