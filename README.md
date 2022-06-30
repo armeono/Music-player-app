@@ -18,3 +18,5 @@ Features:
 <img width="1787" alt="Screen Shot 2022-06-30 at 10 24 35 PM" src="https://user-images.githubusercontent.com/72741758/176772622-aa594a08-fec2-4148-8fe6-0eae08e75ca9.png">
 
 <img width="1787" alt="Screen Shot 2022-06-30 at 10 24 58 PM" src="https://user-images.githubusercontent.com/72741758/176772638-99ac18d4-b574-40e8-917f-62b729ef36e3.png">
+
+<img width="1787" alt="Screen Shot 2022-06-30 at 10 30 00 PM" src="https://user-images.githubusercontent.com/72741758/176773093-6f7e9f5e-6a93-48e5-82f9-70bec4a0cb87.png">
