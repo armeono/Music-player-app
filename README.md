@@ -1,5 +1,5 @@
 # Music-player-app
-Music player app created using Angular, Java Spring Boot and MySQL. Project done as part of Softray Spring 2022.
+Music player app created using Angular, Java Spring Boot and MySQL. Project done as part of Softray Sprint 2022 internship.
 
 Features: 
   - View all songs in your library
